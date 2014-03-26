@@ -58,6 +58,7 @@ function player:update(dt)
 		self.width = 32
 		self.y = love.graphics.getHeight() - 32
 		self.vspeed = 0;
+		self.x = math.floor( self.x )
 
 	end
 	--Jumping
@@ -65,6 +66,8 @@ function player:update(dt)
 		if self.y == love.graphics.getHeight() - 32 then
 			self.y = self.y - 1
 			self.vspeed = -7.0
+			jumpsnd = love.audio.newSource("snd/jump.wav", "static")
+			jumpsnd:play()
 		end
 	end
 end

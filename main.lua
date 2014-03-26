@@ -11,7 +11,7 @@ function love.load ( )
 	love.mouse.setVisible( false )
 	spr_title = love.graphics.newImage("img/title.png")
 	golod = love.graphics.newImage("img/logo.png")
-
+	jumpsnd = 
 	player:init( 32, love.window.getHeight() - 32, 32, 32 )
 end
 
