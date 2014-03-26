@@ -40,7 +40,7 @@ end
 
 function debug()
 	--Get info on the game
-	love.graphics.print("DEBUG:", love.window.getWidth() / 2,16)
+	love.graphics.print("Debug:", ( love.window.getWidth() / 2 ) - 32,16)
 	love.graphics.print( "Game:  "..'"'..love.window.getTitle() ..'"'.." by CMYK", 32, 32 )
 	--Debug shit
 	love.graphics.print( "Window Height: " ..love.window.getHeight(), 32, 48 )
@@ -56,5 +56,7 @@ function crossHair()
 end
 
 function love.quit ()
-
+	local file = io.open("save.sav", "w")
+	file:write(player.x)
+	file:close()
 end
